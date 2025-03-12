@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Live Logs</title>
+    <script>
+        const ws = new WebSocket("ws://localhost:8000/ws/logs");
+        ws.onmessage = function (event) {
+            const logs = document.getElementById("logs");
+            logs.innerHTML += event.data + "<br>";
+            logs.scrollTop = logs.scrollHeight;  // Auto-scroll to the bottom
+        };
+    </script>
+</head>
+
+<body>
+    <h1>Live Logs</h1>
+    <div id="logs" style="width: 80%; height: 500px; overflow-y: scroll; border: 1px solid #000; padding: 10px;"></div>
+</body>
+
+</html>
