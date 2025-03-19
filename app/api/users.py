@@ -1,3 +1,4 @@
+# app\api\users.py
 # User API file with routes for user-related endpoints
 
 import logging
@@ -83,7 +84,7 @@ def login(user: UserLogin, db: Session = Depends(get_db)):
 
 @router.post("/logout")
 def logout(
-    authorization: str = Header(...),  # Extract JWT token from the Authorization header
+    authorization: str = Header(...),  # Extract JWT token Auth
     db: Session = Depends(get_db)
 ):
     credentials_exception = HTTPException(

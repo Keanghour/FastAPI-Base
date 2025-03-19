@@ -1,3 +1,4 @@
+# app\db\session.py
 # Database session handling (e.g., SQLAlchemy)
 
 from sqlalchemy import create_engine

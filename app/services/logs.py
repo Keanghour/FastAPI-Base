@@ -1,6 +1,5 @@
-# APIHub\app\services\logs.py
+# app\services\logs.py
 
-# APIHub/app/services/logs.py
 import logging
 import os
 from datetime import datetime, timedelta

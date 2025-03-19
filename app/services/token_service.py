@@ -1,3 +1,5 @@
+# app\services\token_service.py
+
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from sqlalchemy.orm import Session
@@ -12,6 +14,7 @@ def revoke_token(db: Session, token: str):
     revoked_token = RevokedToken(token=token)
     db.add(revoked_token)
     db.commit()
+    
 
 
 def create_password_reset_token(email: str) -> str:

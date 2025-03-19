@@ -1,3 +1,4 @@
+# app\core\config.py
 # Configuration file (e.g., DB, settings)
 
 from pydantic_settings import BaseSettings

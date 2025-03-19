@@ -1,7 +1,31 @@
+# app\schemas\user_schema.py
 # User schema file
 
 from typing import List, Optional
 from pydantic import BaseModel, EmailStr
+from datetime import datetime, timezone, timedelta
+import pytz
+
+
+CAMBODIA_TZ = pytz.timezone("Asia/Phnom_Penh")
+
+class UserSchema(BaseModel):
+    id: int
+    username: str
+    email: str
+    is_active: bool
+    is_verified: bool
+    created_at: datetime
+    updated_at: datetime
+
+    # Convert UTC to UTC+07:00 before returning JSON
+    def dict(self, *args, **kwargs):
+        data = super().dict(*args, **kwargs)
+        if self.created_at:
+            data["created_at"] = self.created_at.astimezone(CAMBODIA_TZ).isoformat()
+        if self.updated_at:
+            data["updated_at"] = self.updated_at.astimezone(CAMBODIA_TZ).isoformat()
+        return data
 
 class UserCreate(BaseModel):
     username: str

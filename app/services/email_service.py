@@ -1,3 +1,5 @@
+# app\services\email_service.py
+
 # from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 # from app.core.config import settings
 

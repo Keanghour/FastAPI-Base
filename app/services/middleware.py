@@ -1,4 +1,5 @@
-# APIHub/app/services/middleware.py
+# app\services\middleware.py
+
 import logging
 from fastapi import Request
 from starlette.responses import Response

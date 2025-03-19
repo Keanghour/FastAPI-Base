@@ -1,3 +1,5 @@
+# app\core\errors.py
+
 from fastapi import FastAPI, HTTPException, status
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
